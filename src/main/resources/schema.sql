@@ -1,4 +1,4 @@
-CREATE TABLE students(
+CREATE TABLE IF NOT EXISTS students (
 	student_id CHAR(8) PRIMARY KEY,
 	firstGradeNum SMALLINT,
 	secondGradeNum SMALLINT,
