@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="works.keyka.mapper.StudentMapper">
+    <!-- 登録 -->
+    <insert id="insert" parameterType="works.keyka.model.StudentModel">
+        INSERT INTO students (student_id, firstGradeNum, secondGradeNum, thirdGradeNum, name, birth_date, graduation_flag)
+        VALUES (#{studentId}, #{firstGradeNum}, #{secondGradeNum}, #{thirdGradeNum}, #{name}, #{birthDate}, #{graduationFlag})
+    </insert>
+
+    <!-- 更新 -->
+    <update id="update" parameterType="works.keyka.model.StudentModel">
+        UPDATE students
+        SET firstGradeNum = #{firstGradeNum},
+        	secondGradeNum = #{secondGradeNum},
+        	thiedGradeNum = #{thirdGradeNum},
+        	name = #{name},
+            birth_date = #{birthDate},
+            graduation_flag = #{graduationFlag}
+        WHERE student_id = #{studentId}
+    </update>
+</mapper>
