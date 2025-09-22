@@ -8,4 +8,5 @@ public class UserModel {
 	private int userSubjectID;
 	private int userRollID;
 	private String userName;
+	private String password;
 }

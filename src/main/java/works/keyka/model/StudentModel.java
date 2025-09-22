@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class StudentModel {
-	private int studentID;
+	private int studentId;
 	private int firstGradeNum;
 	private int secondGradeNum;
 	private int thirdGradeNum;
