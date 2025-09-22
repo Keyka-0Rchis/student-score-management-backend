@@ -1,6 +1,8 @@
 package works.keyka.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,9 +24,11 @@ public class StudentController {
 	private final StudentService studentService;
 	
 	@PostMapping("/registerStudents")
-	public ResponseEntity<String> registerStudents(@RequestBody List<StudentModel> students) {
-		int count = studentService.registerStudents(students);
-		return ResponseEntity.ok(count + "件の生徒を登録しました");
+	public Map<String, String> registerStudents(@RequestBody List<StudentModel> students) {
+	    int count = studentService.registerStudents(students);
+	    Map<String, String> response = new HashMap<>();
+	    response.put("message", count + "件の生徒を登録しました。");
+	    return response; // JSONに変換してくれる
 	}
 	
     // 生徒情報更新

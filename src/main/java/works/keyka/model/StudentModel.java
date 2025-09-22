@@ -12,5 +12,5 @@ public class StudentModel {
 	private int thirdGradeNum;
 	private String name;
 	private LocalDate birthDate;
-	private boolean graduateFlag;
+	private boolean graduationFlag;
 }
