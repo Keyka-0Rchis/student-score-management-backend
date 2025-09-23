@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 import works.keyka.model.StudentModel;
 import works.keyka.service.StudentService;
+
 
 @RestController
 @RequestMapping("/api/students")
@@ -37,4 +39,10 @@ public class StudentController {
         int count = studentService.editStudents(students);
         return ResponseEntity.ok(count + "件の生徒情報を更新しました");
     }
+    
+    @GetMapping("/viewStudents")
+    public List<StudentModel> getMethodName() {
+        return studentService.viewStudents();
+    }
+    
 }

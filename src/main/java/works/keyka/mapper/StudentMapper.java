@@ -1,5 +1,7 @@
 package works.keyka.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import works.keyka.model.StudentModel;
@@ -8,4 +10,5 @@ import works.keyka.model.StudentModel;
 public interface StudentMapper {
 	void insert(StudentModel studentModel);
 	void update(StudentModel studentModel);
+	List<StudentModel> view();
 }

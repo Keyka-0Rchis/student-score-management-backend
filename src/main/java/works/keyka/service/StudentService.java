@@ -32,4 +32,10 @@ public class StudentService  {
         }
         return count;
     }
+    
+    //一覧表示
+    public List<StudentModel> viewStudents(){
+    	System.out.println(studentMapper.view());
+    	return studentMapper.view();
+    }
 }

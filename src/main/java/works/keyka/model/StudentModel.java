@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class StudentModel {
-	private int studentId;	//20250001のような8桁。
+	private String studentId;	//20250001のような8桁。DBでCHAR(8)としたため文字列で。
 	private int firstGradeNum;
 	private int secondGradeNum;
 	private int thirdGradeNum;

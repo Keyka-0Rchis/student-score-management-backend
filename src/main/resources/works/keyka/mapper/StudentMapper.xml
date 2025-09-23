@@ -18,4 +18,17 @@
             graduation_flag = #{graduationFlag}
         WHERE student_id = #{studentId}
     </update>
+    
+    <!-- 一覧表示 -->
+   	<select id="view" resultType="works.keyka.model.StudentModel">
+		SELECT
+	      student_id        AS studentId,
+	      firstgradenum     AS firstGradeNum,   -- Postgresは未引用識別子を小文字化する点に注意
+	      secondgradenum    AS secondGradeNum,
+	      thirdgradenum     AS thirdGradeNum,
+	      name,
+	      birth_date        AS birthDate,
+	      graduation_flag   AS graduationFlag
+		FROM students
+	</select>
 </mapper>
