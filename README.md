@@ -22,7 +22,7 @@ src/main/java/works/keyka/
 ├── controller/
 │ └── StudentController.java # 生徒情報の登録、編集を制御します。
 ├── service/
-│ └── resisterStudentService.java # 生徒登録を行います。
+│ └── StudentService.java # 生徒登録、編集、一覧表示を行います。
 ├── mapper/
 │ └── StudentMapper.java # 生徒情報のマッピングを行うためのインターフェース。
 ├── model/
@@ -42,4 +42,4 @@ src/main/resource/works/keyka/
 ## 現状
 - ER図を作成。
 - ER図を用いてドメインモデルを定義。
-- 生徒の登録、一覧表示機能を追加
+- 生徒の登録、一覧表示、編集、論理削除機能を追加
