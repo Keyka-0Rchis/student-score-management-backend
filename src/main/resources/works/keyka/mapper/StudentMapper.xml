@@ -12,7 +12,7 @@
         UPDATE students
         SET firstGradeNum = #{firstGradeNum},
         	secondGradeNum = #{secondGradeNum},
-        	thiedGradeNum = #{thirdGradeNum},
+        	thirdGradeNum = #{thirdGradeNum},
         	name = #{name},
             birth_date = #{birthDate},
             graduation_flag = #{graduationFlag}

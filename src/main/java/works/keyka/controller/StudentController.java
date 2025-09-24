@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,9 +34,11 @@ public class StudentController {
 	
     // 生徒情報更新
     @PostMapping("/editStudents")
-    public ResponseEntity<String> editStudents(@RequestBody List<StudentModel> students) {
-        int count = studentService.editStudents(students);
-        return ResponseEntity.ok(count + "件の生徒情報を更新しました");
+    public Map<String, String> editStudents(@RequestBody List<StudentModel> students) {
+	    int count = studentService.editStudents(students);
+	    Map<String, String> response = new HashMap<>();
+	    response.put("message", count + "件の生徒情報を更新しました。");
+	    return response; // JSONに変換してくれる
     }
     
     @GetMapping("/viewStudents")
