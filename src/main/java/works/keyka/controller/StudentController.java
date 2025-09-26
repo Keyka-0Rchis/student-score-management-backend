@@ -24,7 +24,7 @@ public class StudentController {
 
 	private final StudentService studentService;
 	
-	@PostMapping("/registerStudents")
+	@PostMapping("/register")
 	public Map<String, String> registerStudents(@RequestBody List<StudentModel> students) {
 	    int count = studentService.registerStudents(students);
 	    Map<String, String> response = new HashMap<>();
@@ -33,7 +33,7 @@ public class StudentController {
 	}
 	
     // 生徒情報更新
-    @PostMapping("/editStudents")
+    @PostMapping("/edit")	
     public Map<String, String> editStudents(@RequestBody List<StudentModel> students) {
 	    int count = studentService.editStudents(students);
 	    Map<String, String> response = new HashMap<>();
@@ -41,7 +41,7 @@ public class StudentController {
 	    return response; // JSONに変換してくれる
     }
     
-    @GetMapping("/viewStudents")
+    @GetMapping("/view")
     public List<StudentModel> getMethodName() {
         return studentService.viewStudents();
     }
