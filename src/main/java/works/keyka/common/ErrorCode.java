@@ -6,7 +6,7 @@ public enum ErrorCode {
 	//不正な文字列
 	VALIDATION_ERROR("E001",HttpStatus.BAD_REQUEST),
 	//IDの重複
-	DUPLICATE_EMAIL("E002",HttpStatus.BAD_REQUEST),
+	DUPLICATE_ID("E002",HttpStatus.BAD_REQUEST),
 	//データベースの不具合
 	DB_ERROR("E500",HttpStatus.BAD_GATEWAY),
 	//その他原因不明

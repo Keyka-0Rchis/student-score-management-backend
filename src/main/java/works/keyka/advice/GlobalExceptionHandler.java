@@ -26,9 +26,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(DuplicateIdException.class)
     public ResponseEntity<Map<String, String>> handleDuplicate(DuplicateIdException ex) {
     	Map<String, String> errors = new HashMap<>();
-        ex.getBindingResult().getFieldErrors().forEach(error ->
-        	errors.put(error.getField(), error.getDefaultMessage())
-	    );
+    	errors.put("ErrorCode", ex.getErrorCode().getCode());
+    	errors.put("Message",ex.getMessage());
 	    return ResponseEntity.badRequest().body(errors);
     }
 }
