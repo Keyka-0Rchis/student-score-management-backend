@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,7 +27,7 @@ public class StudentController {
 	private final StudentService studentService;
 	
 	@PostMapping("/register")
-	public Map<String, String> registerStudents(@RequestBody List<StudentModel> students) {
+	public Map<String, String> registerStudents(@Valid @RequestBody List<StudentModel> students) {
 	    int count = studentService.registerStudents(students);
 	    Map<String, String> response = new HashMap<>();
 	    response.put("message", count + "件の生徒を登録しました。");
@@ -34,7 +36,7 @@ public class StudentController {
 	
     // 生徒情報更新
     @PostMapping("/edit")	
-    public Map<String, String> editStudents(@RequestBody List<StudentModel> students) {
+    public Map<String, String> editStudents(@Valid @RequestBody List<StudentModel> students) {
 	    int count = studentService.editStudents(students);
 	    Map<String, String> response = new HashMap<>();
 	    response.put("message", count + "件の生徒情報を更新しました。");

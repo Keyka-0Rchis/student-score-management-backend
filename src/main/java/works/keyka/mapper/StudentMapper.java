@@ -10,5 +10,6 @@ import works.keyka.model.StudentModel;
 public interface StudentMapper {
 	void insert(StudentModel studentModel);
 	void update(StudentModel studentModel);
+	List<String> findExistingIds(List<String> ids);
 	List<StudentModel> view();
 }

@@ -19,6 +19,16 @@
         WHERE student_id = #{studentId}
     </update>
     
+    <!-- 重複確認 -->
+    <select id="findExistingIds" resultType="string">
+	    SELECT student_id
+	    FROM students
+	    WHERE student_id IN
+	    <foreach collection="list" item="id" open="(" separator="," close=")">
+	        #{id}
+	    </foreach>
+	</select>
+    
     <!-- 一覧表示 -->
    	<select id="view" resultType="works.keyka.model.StudentModel">
 		SELECT
