@@ -9,9 +9,13 @@ import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class StudentModel {
 	@NotEmpty
 	@Pattern(regexp = "\\d{8}") //数字8桁で構成
