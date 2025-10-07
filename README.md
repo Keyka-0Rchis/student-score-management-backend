@@ -18,28 +18,51 @@
 
 ## フォルダ構成
 ```
-src/main/java/works/keyka/
-├── controller/
-│ └── StudentController.java # 生徒情報の登録、編集を制御します。
-├── service/
-│ └── StudentService.java # 生徒登録、編集、一覧表示を行います。
-├── mapper/
-│ └── StudentMapper.java # 生徒情報のマッピングを行うためのインターフェース。
-├── model/
-│ └── ExamModel.java # 考査区分のモデル
-│ └── ExamResultModel.java # 考査結果のモデル
-│ └── RoleModel.java # 役職のモデル
-│ └── StudentModel.java # 生徒のモデル
-│ └── SubjectModel.java # 教科のモデル
-│ └── UserModel.jave # 教員のモデル
-├── .gitignore
-└── README.md # このファイル
-src/main/resource/works/keyka/
-├── mapper/
-│ └── StudentMapper.xml # 生徒情報のマッピングのSQL文
+📂 student-score-management-backend
+├── 📁 src
+│   ├── 📁 main
+│   │   ├── 📁 java
+│   │   │   └── 📁 works
+│   │   │       └── 📁 keyka
+│   │   │           ├── 📁 advice
+│   │   │           │   └── GlobalExceptionHandler.java     # 共通例外ハンドリング
+│   │   │           ├── 📁 common
+│   │   │           │   └── 📁 exception
+│   │   │           │       └── ErrorCode.java              # エラーコード定義
+│   │   │           ├── 📁 controller
+│   │   │           │   └── StudentController.java          # APIエンドポイント
+│   │   │           ├── 📁 mapper
+│   │   │           │   └── StudentMapper.java              # MyBatis Mapperインターフェース
+│   │   │           ├── 📁 model                            # ドメインモデル（@Data）
+│   │   │           │   ├── ExamModel.java
+│   │   │           │   ├── ExamResultModel.java
+│   │   │           │   ├── RoleModel.java
+│   │   │           │   ├── StudentModel.java               
+│   │   │           │   ├── SubjectModel.java
+│   │   │           │   └── UserModel.java
+│   │   │           ├── 📁 service
+│   │   │           │   └── StudentService.java             # 業務ロジック層
+│   │   │           └── StudentScoreManagementBackendApplication.java
+│   │   └── 📁 resources
+│   │       ├── 📁 static                                   # 静的リソース（未使用）
+│   │       ├── 📁 templates                                # Thymeleafテンプレート（未使用）
+│   │       └── 📁 works
+│   │           └── 📁 keyka
+│   │               └── 📁 mapper
+│   │                   └── StudentMapper.xml               # MyBatis SQLマッピングファイル
+│   │       ├── application-sample.properties               # 公開用サンプル設定
+│   │       └── schema.sql                                  # テーブル定義
+│   └── 📁 test
+│       └── 📁 java
+│           └── 📁 works
+│               └── 📁 keyka
+│                   └── 📁 service
+│                       └── StudentServiceTest.java          # Service層の単体テスト
+
 ```
 
 ## 現状
 - ER図を作成。
 - ER図を用いてドメインモデルを定義。
 - 生徒の登録、一覧表示、編集、論理削除機能を追加
+- サービス層の単体テストの実装
