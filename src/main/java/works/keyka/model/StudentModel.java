@@ -22,13 +22,13 @@ public class StudentModel {
 	private String studentId;	//20250001のような8桁。DBでCHAR(8)としたため文字列で。
 	@Min(1000)
 	@Max(9999)
-	private int firstGradeNum;
+	private Integer firstGradeNum;
 	@Min(1000)
 	@Max(9999)
-	private int secondGradeNum;
+	private Integer secondGradeNum;
 	@Min(1000)
 	@Max(9999)
-	private int thirdGradeNum;
+	private Integer thirdGradeNum;
 	@Size(max=100)
 	private String name;
 	@Past						//未来に生まれることはないこととする
